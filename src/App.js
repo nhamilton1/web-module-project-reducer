@@ -7,7 +7,7 @@ import CalcButton from './components/CalcButton';
 
 import reducer, {initialState} from './reducers/index'
 
-import { addOne, applyNumber } from './actions';
+import { addOne, applyNumber, changeOperation} from './actions';
 
 function App() {
 
@@ -58,9 +58,9 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton onClick={() => {dispatch(changeOperation('+'))}} value={"+"}/>
+              <CalcButton onClick={() => {dispatch(changeOperation('*'))}} value={"*"}/>
+              <CalcButton onClick={() => {dispatch(changeOperation('-'))}} value={"-"}/>
             </div>
 
             <div className="row ce_button">
