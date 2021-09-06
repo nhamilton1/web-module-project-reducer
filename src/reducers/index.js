@@ -3,8 +3,8 @@ import {
     APPLY_NUMBER,
     CHANGE_OPERATION,
     CLEAR_DISPLAY,
-    MEMORY_PLUS,
     MEMORY_ADD,
+    MEMORY_APPLY,
     MEMORY_CLEAR,    
 } from './../actions';
 
@@ -50,12 +50,12 @@ const reducer = (state, action) => {
                 ...state,
                 total: 0
             })
-        case(MEMORY_PLUS):
+        case(MEMORY_ADD):
             return({
                 ...state,
                 memory: state.total
             })
-        case(MEMORY_ADD):
+        case(MEMORY_APPLY):
             return({
                 ...state,
                 total: calculateResult(state.memory, state.total, state.operation)
